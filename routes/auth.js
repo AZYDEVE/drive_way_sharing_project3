@@ -28,7 +28,7 @@ app.use(Passport.session());
 const MongoClient = require("mongodb").MongoClient;
 const uri =
   process.env.MONGO_URL ||
-  "mongodb+srv://Kristina:test@cluster0.d0ey3.mongodb.net/db?retryWrites=true&w=majority";
+  "mongodb://localhost:27017";
 
 Passport.use(
   new Strategy(
@@ -70,14 +70,14 @@ Passport.deserializeUser((id, done) => {
 router.post(
   "/signin",
   Passport.authenticate("local", {
-    successRedirect: "/table",
+    successRedirect: "/home",
     failureRedirect: "/signin?error=Invalid username or password.",
   })
 );
 
 router.post("/signup", async (req, res, next) => {
 
-  myDB.initialize(); //load dogs
+  
   const registrationParams = req.body;
 
   const users = await myDB.initializeUsers();
@@ -148,7 +148,7 @@ router.post("/update", async (req, res, next) => {
           }
         );
 
-        res.redirect("/table");
+        res.redirect("/home");
       }
     });
   }
@@ -177,28 +177,6 @@ router.post("/delete", async (req, res, next) => {
   }
 });
 
-router.post("/updateLike", async (req, res, next) => {
-  const dogs = await myDB.getDogs();
-  const info = req.body;
-  dogs.findOne({ name: info.dogname }, function (err, dog) {
-    if (err) {
-      return next(err);
-    }
-    if (!dog) {
-      res.redirect("/dogpage?error=Dog not found, please try again.");
-    } else {
-      dogs.updateOne(
-        {
-          name: info.dogname,
-        },
-        {
-          $inc: { likes: 1 },
-        }
-      );
 
-      res.redirect("/table");
-    }
-  });
-});
 
 module.exports = router;
