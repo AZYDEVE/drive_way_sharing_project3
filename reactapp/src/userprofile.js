@@ -1,6 +1,4 @@
 import React from "react";
-import "./css/userprofile.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
 function UserProfile() {
@@ -28,7 +26,7 @@ function UserProfile() {
                   id="username"
                   name="username"
                   className="form-control"
-                  placeholder="Alice"
+                  placeholder=" "
                   form="update"
                 />
               </div>
@@ -43,7 +41,7 @@ function UserProfile() {
                   id="newusername"
                   name="newusername"
                   className="form-control"
-                  placeholder="Alice Improved"
+                  placeholder=""
                   form="update"
                 />
               </div>
