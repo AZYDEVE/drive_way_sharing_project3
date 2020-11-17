@@ -115,21 +115,22 @@ router.post("/check_current_login", async function (req, res) {
 // check if the user email and password matches with the user database  
 // if yes, record the user email to the currentLogin and send back {result: true} , else send back {result : false} 
 router.post("/check_email_and_password", async function (req, res) {
-  console.log("alex :" + req.body);
+
   
   const p = await db.getData("posting", "users", {email:req.body.email});
-  console.log(p);
+ 
   
   const user = p[0];
   const verification = passwordHash.verify(req.body.password, user.password);
-  console.log(verification);
+ 
   if ( p.length === 0 ) {
     res.json({ result: false });
     
   } else{
     
     if(verification){
-      await db.insertData("posting", "currentLogIn", req.body.email);
+      console.log(verification);
+      await db.insertData("posting", "currentLogIn", {email:req.body.email});
       res.json({ result: true });
       console.log("hellooooo");
 
@@ -138,6 +139,12 @@ router.post("/check_email_and_password", async function (req, res) {
     }
     
   }
+});
+
+
+router.post("/delete_login_token", async function (req, res) {
+  const p = await db.deleteData("posting", "currentLogIn", req.body);
+  res.json(p);
 });
 
 

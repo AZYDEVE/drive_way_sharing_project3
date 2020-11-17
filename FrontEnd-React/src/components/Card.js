@@ -1,10 +1,10 @@
 import React from "react";
-import { Card,Button,Container } from "react-bootstrap";
+
 
 function CardView(props){
 
    return (
-      <div className="card text-center col-3 m-4  ">
+      <div className="card text-center" style = {props.style}>
         <div className="overflow">
           <img
             src="https://p.rdcpix.com/v01/l0511a742-m1xd-w640_h480_q80.jpg"

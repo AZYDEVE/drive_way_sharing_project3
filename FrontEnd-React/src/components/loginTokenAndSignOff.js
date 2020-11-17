@@ -43,3 +43,17 @@ export const checkIfUserPasswordMatches= async (userObj)=>{
 
 
 }
+
+export const deleteLoginToken= async (query)=>{
+
+      const res = await fetch("/delete_login_token", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(query),
+    });
+   
+   
+
+}

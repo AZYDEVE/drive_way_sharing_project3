@@ -1,0 +1,130 @@
+.home-container {
+  display: grid;
+  font-family: 'Montserrat', sans-serif;
+  
+  
+   grid-template: 
+   "home-nav home-nav" 2%
+   "activeTitle ." 2%
+   "cardview calendar" 20%
+   ". .       "        75%
+   / 25%     75%;
+  
+  grid-gap: 10px;
+  grid-row-gap: 20px
+  
+
+
+   
+
+  
+}
+
+.home-nav {
+  grid-area: home-nav;
+  display: inline;
+
+}
+
+.home-active-post-title {
+  grid-area: activeTitle;
+  justify-self: center;
+  color: #808080;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 20px;
+ 
+
+}
+
+.home-cardview {
+
+  grid-area: cardview;
+  overflow: scroll;
+  overflow-y: auto;
+  padding: 50px;
+  border: 4px solid #A9A9A9;
+  border-radius: 15px;
+  margin-left: 30px;
+
+
+}
+
+.home-calendar {
+
+  grid-area: calendar ; 
+  overflow: scroll;
+  overflow-y:auto;
+ padding-left:40px;
+  padding-right:40px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  justify-content: center;
+  border: 4px solid #A9A9A9;
+  border-radius: 15px;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  margin-right: 30px
+}
+
+li, a, button {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   font-size: 16px;
+   color:#edf0f1;
+   text-decoration: none;
+
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color:   #001933;
+
+}
+
+.home-logo {
+    
+    cursor: pointer;
+
+}
+
+.home-nav-link {
+  list-style: none;
+  color: #FFFAF0;
+ 
+}
+
+.home-nav-link li {
+   display: inline-block;
+  padding: 0px 20px;
+  
+
+}
+
+.home-nav-link li a {
+  transition: all 0.3s ease 0s;
+
+} 
+
+.home-nav-link li a:hover {
+  color:#FFFAF0;
+}
+
+.homeLogOut {
+  padding-left: 9px 25px;
+  background-color: #001933;
+  border: none;
+  border-radius: 50px;
+  cursor:pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0,136,169,0.8);
+}
+
+::-webkit-scrollbar {
+ display: none;
+};

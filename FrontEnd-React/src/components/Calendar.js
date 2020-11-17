@@ -128,13 +128,15 @@ const Calendar = (props) => {
 
   return (
     <FullCalendar
-      className="col-8"
+      style ={props.style}
+      className=""
       plugins={[dayGridPlugin, timeGridPlugin]}
       initialView="timeGridWeek"
       defaultDate={new Date()}
       selectable={true}
       displayEventTime={false}
       events={getEvent()}
+      eventColor="#c87606 "
       defaultView="timeGridWeek"
       header={{
               left: 'prev,next today',

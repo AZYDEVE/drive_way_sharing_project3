@@ -34,24 +34,7 @@ function App() {
 
   return (
     <Router>
-      <div>
-        
-        {window.location.pathname === "/searchpage" ||
-          window.location.pathname === "/createpost"  ||
-          window.location.pathname === "/home" ? (
-            <ul className="header">
-              <li>
-                <a href="/home">Home</a>
-              </li>
-              <li>
-                <a href="/createpost">Create Post</a>
-              </li>
-              <li>
-                <a href="/searchpage">Search post</a>
-              </li>
-            </ul>
-          ): <div></div>}
-      </div>
+  
       <Switch>
         <Route path="/signUp" component={SignUp} />
         <Route path="/signin" component={SignIn} />
