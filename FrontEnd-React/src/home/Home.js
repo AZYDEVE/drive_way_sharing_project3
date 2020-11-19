@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CardView from "../components/Card";
-import { Card, Button, Container } from "react-bootstrap";
-import { useAuth0 } from "@auth0/auth0-react";
 /*import UserContext from "./UserContext";*/
 import Calendar from "../components/Calendar";
 import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import Style from "./home.css";
-import logo from "./logo.png"
-
+import logo from "./logo.png";
 
 function Home(props) {
   const history = useHistory();
@@ -64,13 +61,14 @@ function Home(props) {
 
   const check = async () => {
     const data = localStorage.getItem("current-user");
-
     if (data) {
       const result = await loginToken.checkCurrentLogin({ email: data });
       console.log(result);
       if (result.result === false) {
         history.push("/signin");
       }
+    } else {
+      history.push("/login");
     }
   };
 
@@ -94,45 +92,56 @@ function Home(props) {
     /* setSelectedPost(post);*/ // put current selected post to useState
   };
 
-  const handleLogOut= async ()=>{
-    console.log(userInfo.email)
-    loginToken.deleteLoginToken({email:userInfo})
+  const handleLogOut = async () => {
+    console.log(userInfo.email);
+    loginToken.deleteLoginToken({ email: userInfo });
+    localStorage.removeItem("current-user");
+  };
 
-
-  }
-
-
-
-
-
-  const cardViewStyle = {margin: "20px"}
-  const calendarStyle = {width:"50vw", height:"50vh"}
+  const cardViewStyle = {
+   
+    marginBottom: "40px",
+   
+    borderRadius: "20px ",
+     overflow:"hidden"
+  };
+  const calendarStyle = { width: "50vw", height: "50vh" };
 
   return (
     <div className="home-container">
       <nav className="home-nav">
-      <img className="home-logo" src={logo} alt="logo" height="50"/>
+        <img className="home-logo" src={logo} alt="logo" height="120" />
         <ul className="home-nav-link">
           <li>
-            <a  href="/home">Home</a>
+            <a className="nav-link-home" href="/home">
+              HOME
+            </a>
           </li>
           <li>
-            <a  href="/createpost">Create Post</a>
+            <a className="nav-link-createpost" href="/createpost">
+              CREATE POST
+            </a>
           </li>
           <li>
-            <a  href="/searchpage">Search post</a>
+            <a className="nav-link-search" href="/searchpage">
+              SEARCH POST 
+            </a>
           </li>
         </ul>
-        <a  href="/#"><button className="homeLogOut" onClick={handleLogOut}>Log Out</button></a>
+        <a id="nav-link-a" href="/#">
+          <button className="homeLogOut" onClick={handleLogOut}>
+            Log Out
+          </button>
+        </a>
       </nav>
-      <h3 className="home-active-post-title">
-        <u>Active Post</u>
-      </h3>
+      <h4 className="home-active-post-title">
+        <u>Your Posts</u>
+      </h4>
       {dataStatus ? (
         <div className="home-cardview ">
           {userActivePost.map((t) => (
             <CardView
-              style = {cardViewStyle}
+              style={cardViewStyle}
               parkingFee={t.parkingFee}
               post={t}
               street={t.street}
@@ -150,7 +159,11 @@ function Home(props) {
         {Object.keys(selectedPost).length === 0 ? (
           ""
         ) : (
-          <Calendar style={calendarStyle} selectedPost={selectedPost} appointment={appointment} />
+          <Calendar
+            style={calendarStyle}
+            selectedPost={selectedPost}
+            appointment={appointment}
+          />
         )}
       </div>
     </div>

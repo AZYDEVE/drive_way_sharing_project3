@@ -42,7 +42,8 @@ useEffect(() => {
            history.push("/v_signin" )
       }
 
-    }
+    }else{
+      history.push("/login")}
 }
 
 

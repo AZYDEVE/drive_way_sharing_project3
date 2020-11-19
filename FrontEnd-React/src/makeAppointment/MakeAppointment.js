@@ -99,7 +99,8 @@ function MakeAppointmentTesting() {
            history.push("/v_signin" )
       }
 
-    }
+    }else{
+      history.push("/login")}
 }
 
 

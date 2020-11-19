@@ -136,7 +136,7 @@ const Calendar = (props) => {
       selectable={true}
       displayEventTime={false}
       events={getEvent()}
-      eventColor="#c87606 "
+      eventColor="#8DA562"
       defaultView="timeGridWeek"
       header={{
               left: 'prev,next today',

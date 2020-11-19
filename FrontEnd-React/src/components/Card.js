@@ -12,7 +12,7 @@ function CardView(props){
             className="card-img-top embed-responsive-item"
           />
         </div>
-        <div className="card-body text-dark">
+        <div className="card-body text-dark" style={{border:"1px", borderRadius: "40px !important"}} >
           <h4 className="card-title">{`Fee: ${props.parkingFee}`}</h4>
           <p className="card-text text-secondary">{props.street}</p>
           <button className="btn btn-dark" name={props.name} onClick={()=> {props.function(props.post)}} >

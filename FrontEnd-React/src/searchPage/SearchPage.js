@@ -48,7 +48,8 @@ function SearchPage(props) {
            history.push("/v_signin" )
       }
 
-    }
+    }else{
+      history.push("/login")}
 }
 
 
