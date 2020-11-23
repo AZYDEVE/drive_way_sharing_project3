@@ -8,7 +8,7 @@ import Calendar from "../components/Calendar";
 import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import Navbar from "../components/Navbar/Navbar";
-import "./makeAppointment.css"
+import "./makeAppointment.css";
 
 function MakeAppointmentTesting() {
   const history = useHistory();
@@ -83,7 +83,7 @@ function MakeAppointmentTesting() {
 
     if (data) {
       const result = await loginToken.checkCurrentLogin({ email: data });
-      
+
       if (result.result === false) {
         history.push("/v_signin");
       }
@@ -98,14 +98,12 @@ function MakeAppointmentTesting() {
 
   const initialSetup = async () => {
     const data = localStorage.getItem("current-user");
-   
+
     if (data) {
       setUserInfo(data);
     }
 
     const postRent = await localStorage.getItem("post-picked");
-
-    
 
     if (postRent) {
       const currentPost = await JSON.parse(postRent);
@@ -117,36 +115,36 @@ function MakeAppointmentTesting() {
         "/get_appointment_query"
       );
 
- 
       await setExistingAppointment(data);
     }
   };
 
   const handleLogOut = async () => {
-   
     loginToken.deleteLoginToken({ email: userInfo });
     localStorage.removeItem("current-user");
   };
 
   return (
     <>
-      <Navbar role = "navigation" logoutFunction={handleLogOut} />
+      <Navbar role="navigation" logoutFunction={handleLogOut} />
+     
 
-      <div className="make-appointment-body" >
-      <div className = "make-appointment-date-picker">
-        <DayPicker
-          role="date picker"
-          selectedDays={datePicked}
-          onDayClick={(e) => {
-            setDatePicked(e);
-          }}
-        />
+      <div className="make-appointment-body">
+        <div className="make-appointment-date-picker">
+          <DayPicker
+            aria-label = "date-picker"
+            role="date picker"
+            selectedDays={datePicked}
+            onDayClick={(e) => {
+              setDatePicked(e);
+            }}
+          />
+        </div>
 
-      </div>
-
-        <h5 className = "time-picker-title-start">Start Time </h5>
+        <p className="time-picker-title-start">Start Time </p>
         <TimePicker
-        role = "timepicker"
+          role="timepicker"
+          aria-label = "timepicker-start-park-time"
           className="make-appointment-time-picker-start"
           start="0"
           end="24"
@@ -157,8 +155,9 @@ function MakeAppointmentTesting() {
             setStartTime(e);
           }}
         />
-        <h5 className="time-picker-title-end">End Time </h5>
+        <p className="time-picker-title-end">End Time </p>
         <TimePicker
+        aria-label = "timepicker-end-park-time"
           className="make-appointment-time-picker-end"
           start="0"
           end="24"
@@ -177,12 +176,11 @@ function MakeAppointmentTesting() {
           Confirm
         </button>
         <div className="make-appointment-calendar">
-        <Calendar
-          
-          selectedPost={driveWayPost}
-          appointment={existingAppointment}
-          selectedDate={datePicked}
-        />
+          <Calendar
+            selectedPost={driveWayPost}
+            appointment={existingAppointment}
+            selectedDate={datePicked}
+          />
         </div>
       </div>
     </>

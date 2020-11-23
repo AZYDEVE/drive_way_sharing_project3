@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./image/logo.png"
-import "./navbar.css"
+import "./navbar.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -24,27 +25,26 @@ function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="home-nav-link">
           <li className="nav-item active" >
-            <a className="nav-link-home" href="/home" style ={props.homeActive}>
+            <Link className="nav-link-home" to="/home" style ={props.homeActive}>
               HOME <span class="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a class="nav-link-createpost" href="/createpost" style ={props.createPostActive}>
-              {" "}
+            <Link  class="nav-link-createpost" to="/createpost" style ={props.createPostActive}>
               CREATE POST
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link-search" href="/searchpage" style ={props.searchPostActive}>
+            <Link  className="nav-link-search" to="/searchpage" style ={props.searchPostActive}>
               SEARCH POST
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-          <a  href="/">
+          <Link   to="/">
             <button className="homeLogOut" onClick={props.logoutFunction}>
               Log Out
             </button>
-          </a>
+          </Link>
              </li>
         </ul>
       </div>

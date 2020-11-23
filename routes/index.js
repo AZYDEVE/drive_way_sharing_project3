@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const db = require("../db/mongoConnection");
 const passwordHash = require("password-hash");
 
@@ -145,6 +146,15 @@ router.post("/check_email_and_password", async function (req, res) {
 router.post("/delete_login_token", async function (req, res) {
   const p = await db.deleteData("posting", "currentLogIn", req.body);
   res.json(p);
+});
+
+
+router.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 
