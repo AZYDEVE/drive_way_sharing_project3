@@ -44,6 +44,7 @@
 
 .date-time-title {
   grid-area: dtTit;
+  margin-left: 173px
 }
 
 .start-title {
@@ -199,9 +200,7 @@
   padding-right: 20px;
 }
 
-.img-picker-show : hover{
-  background-color: #8DA562;
-}
+
 
 .img-custom-text {
   grid-area: imgTx;
@@ -235,8 +234,5 @@
 }
 
 
-.submit-btn : hover{
- background-color: #8DA562;
 
-}
 

@@ -16,6 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import SignUp from "./loginAndLogOutPage/SignUp";
 import SignIn from "./loginAndLogOutPage/Login";
+import MyAppointment from "./AppointmentPage/MyAppointment";
 
 function App() {
   let history = useHistory();
@@ -43,6 +44,7 @@ function App() {
         <Route path="/createpost" component={CreatePost} />
         <Route path="/home" component={Home} />
         <Route path="/make_appointment" component={MakeAppointment} />
+        <Route path="/my_appointment" component={MyAppointment} />
 
         <Route path="/" component={SignIn} />
         <Route path="/App" component={App} />

@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(../utility/font/Futura Bold font.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-light";
+  src: local("Futura-light"),
+    url(../utility/font/futura light bt.ttf) format("truetype");
+}
+
+
+.my-appointment-body {
+  font-family: "Futura", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  align-items: center;
+  font-size: 18px;
+ 
+}
+
+.cardView-appointment {
+  margin-top: 20px
+  }
+
+.appointment-title {
+  font-family: "Futura-light", sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 570px;
+  font-family: 
+
+}

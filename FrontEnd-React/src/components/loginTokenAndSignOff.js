@@ -38,7 +38,7 @@ export const checkIfUserPasswordMatches= async (userObj)=>{
     });
 
   const token =await res.json();
-  console.log(token)
+  
   return token;
 
 

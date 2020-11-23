@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Container, Form, Col, option } from "react-bootstrap";
 import TimePicker from "react-bootstrap-time-picker";
-import swal from "sweetalert";
+import Swal from 'sweetalert2'
 import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import firebase from "../utility/fireDB/firebaseConnect";
@@ -312,15 +312,14 @@ function CreatePost() {
             };
             await fetch("/insert_newpost", requestOptions)
               .then(async (response) => {
-                swal(
-                  "SUCCESS",
-                  "You post is successfully published  ",
-                  "success"
-                );
+                Swal.fire({
+                  icon:"success",
+                  text:"You post is successfully published"
+                }).then(history.push(history.push("/home")));
                 const data = await response;
               
 
-                /*history.push("/home");*/
+                
               })
               .catch((error) => {
                 console.log(error);

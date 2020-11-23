@@ -72,3 +72,8 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.fc-widget-content{
+  font-size: 18px;
+}
+

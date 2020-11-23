@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Futura";
-  src: local("Futura"), url(../../utility/font/Futura Bold font.ttf) format("truetype");
+  src: local("Futura"), url(../../../utility/font/Futura Bold font.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Futura-light";
   src: local("Futura-light"),
-    url(../../utility/font/futura light bt.ttf) format("truetype");
+    url(../../../utility/font/futura light bt.ttf) format("truetype");
 }
 
 

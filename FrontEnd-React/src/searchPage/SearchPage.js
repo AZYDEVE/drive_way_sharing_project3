@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Card, Button, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import "./searchPage.css";
 import { Redirect } from "react-router-dom";
 import CardView from "../components/Card/Card";
-
 import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import Navbar from "../components/Navbar/Navbar";
@@ -101,7 +100,7 @@ function SearchPage(props) {
 
       <div className="searchpost-filter-area">
         <input
-          
+          aria-label ="search-field-zipcode"
           className="searpost-input-zip"
           type="text"
           placeholder="Search By Zip Code"

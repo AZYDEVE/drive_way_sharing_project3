@@ -3,7 +3,7 @@ import moment from "moment";
 import TimePicker from "react-bootstrap-time-picker";
 import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
-import swal from "sweetalert";
+import Swal from 'sweetalert2'
 import Calendar from "../components/Calendar";
 import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
@@ -61,7 +61,7 @@ function MakeAppointmentTesting() {
 
   const confirmSchedule = async () => {
     const lastItem = existingAppointment[existingAppointment.length - 1];
-    swal("Your appointment is scheduled", { button: false });
+ 
     const res = await fetch("/insert_appointment", {
       method: "post",
       headers: {
@@ -70,7 +70,10 @@ function MakeAppointmentTesting() {
       body: JSON.stringify(lastItem),
     });
 
-    history.push("/home");
+      Swal.fire({
+                  icon:"success",
+                  text:"Your appointment is scheduled"
+                }).then(history.push(history.push("/my_appointment")))
   };
 
   //check database if the user is in the currently login collection
@@ -85,10 +88,10 @@ function MakeAppointmentTesting() {
       const result = await loginToken.checkCurrentLogin({ email: data });
 
       if (result.result === false) {
-        history.push("/v_signin");
+        history.push("/signin");
       }
     } else {
-      history.push("/login");
+      history.push("/signin");
     }
   };
 

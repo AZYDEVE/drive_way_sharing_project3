@@ -30,6 +30,11 @@ function Navbar(props) {
             </Link>
           </li>
           <li className="nav-item">
+            <Link  class="nav-link-MyAppointment" to="/my_appointment" style ={props.MyAppointment}>
+              MY APPOINTMENTS
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link  class="nav-link-createpost" to="/createpost" style ={props.createPostActive}>
               CREATE POST
             </Link>
