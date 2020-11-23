@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(../utility/font/Futura Bold font.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-light";
+  src: local("Futura-light"),
+    url(../utility/font/futura light bt.ttf) format("truetype");
+}
+
+html body {
+  background-color: #a9a9a9;
+}
+
+.make-appointment-body {
+  background-color: #a9a9a9;
+  font-family: futura, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  height: 1000px;
+  display: grid;
+  justify-content: center;
+  grid-gap: 30px;
+  grid-column-gap: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  grid-template:
+    "datPiker  datPiker  calendar " 300px
+    "timeTitS    .       calendar" 20px
+    "timePickS timePickS calendar " 50px
+    "timeTitE     .      calendar" 20px
+    "timePickE timePickE  calendar" 50px
+    "btnSche   btnConf   calendar " 40px
+    "   .         .      calendar" 220px
+    / 6% 6% 60%;
+}
+
+.make-appointment-date-picker {
+  grid-area: datPiker;
+  border: 3px solid whitesmoke;
+  border-radius: 20px;
+  justify-self: center;
+}
+
+.time-picker-title-start {
+  grid-area: timeTitS;
+}
+
+.time-picker-title-end {
+  grid-area: timeTitE;
+}
+
+.make-appointment-time-picker-start {
+  grid-area: timePickS;
+}
+
+.make-appointment-time-picker-end {
+  grid-area: timePickE;
+
+}
+
+.btn-appointment-schedule {
+  grid-area: btnSche;
+
+  background-color: #292b2c;
+  color: #ffffff;
+  border: 2px;
+  border-radius: 6px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.btn-appointment-confirm {
+  grid-area: btnConf;
+
+  background-color: #292b2c;
+  color: #ffffff;
+  border: 2px;
+  border-radius: 6px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.make-appointment-calendar {
+  grid-area: calendar;
+  background-color: whitesmoke;
+  padding: 20px;
+  height: 710px;
+  overflow: scroll;
+  border: 1px solid #a9a9a9;
+  border-radius: 20px;
+}
+
+.DayPicker-Weekday{
+  color: #ffffff;
+
+}

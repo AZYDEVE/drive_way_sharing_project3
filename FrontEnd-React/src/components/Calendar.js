@@ -113,8 +113,6 @@ const Calendar = (props) => {
     const events=[];
     for(let event of props.appointment){
      events.push( {title:event.renter, start: new Date(event.start), end:new Date(event.end)})
-     console.log(events)
-
     }
 
     return events;

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(../../utility/font/Futura Bold font.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-light";
+  src: local("Futura-light"),
+    url(../../utility/font/futura light bt.ttf) format("truetype");
+}
+
+
+.cardview-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.entireCard {
+  background-color: whitesmoke;
+  opacity: 0.8;
+}
+
+.card-button {
+  background-color: #292b2c;
+  color:#ffffff;
+  border: 3px solid #292b2c;
+  border-radius: 20px;
+  padding: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+}
+
+.card-description {
+  font-size: 20px;
+}

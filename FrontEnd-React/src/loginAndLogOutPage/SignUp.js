@@ -4,11 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import * as loginToken from "../components/loginTokenAndSignOff";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import logo from "../components/Navbar/image/logo.png";
 
 function SignUp() {
-
-
   const history = useHistory();
   const [signUpInfo, setSignUpInfo] = useState({
     email: "",
@@ -18,7 +17,7 @@ function SignUp() {
 
   //updating input value
   const handleSignUpInput = (event) => {
-    const str=event.target.value;
+    const str = event.target.value;
     setSignUpInfo({
       ...signUpInfo,
       [event.target.name]: str.toLowerCase(),
@@ -43,10 +42,9 @@ function SignUp() {
     if (str.result === false) {
       createUserInTheDataBase();
       await loginToken.getLogin({ email: signUpInfo.email.toLowerCase() });
-        
-        localStorage.setItem('current-user', signUpInfo.email)
-        history.push("/home" )
-     
+
+      localStorage.setItem("current-user", signUpInfo.email);
+      history.push("/home");
     } else {
       swal("You already have an account, please sign in", { button: false });
     }
@@ -66,8 +64,11 @@ function SignUp() {
   return (
     <div>
       <div className="SignUp">
+        <div className="signin-logo-name">
+          <img src={logo} alt="logo" className="logo-img" />
+        </div>
         <div className="container-fluid d-flex justify-content-center">
-          <div className="signcard">
+          <div className="signcard-signup">
             <div className="card-header">
               <h3>Sign Up</h3>
             </div>

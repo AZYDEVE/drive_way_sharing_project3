@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(../../utility/font/Futura Bold font.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-light";
+  src: local("Futura-light"),
+    url(../../utility/font/futura light bt.ttf) format("truetype");
+}
+
+
+
+.home-nav {
+  grid-area: home-nav;
+  display: flex;
+  align-items: center;
+  background-color: #a9a9a9;
+  font-family: Futura , sans-serif;
+
+}
+
+.home-logo {
+  cursor: pointer;
+  margin-left: 200px; 
+
+  
+}
+
+.home-nav-link a {
+  font-weight: 500;
+  font-size: 22px;
+  color: #000000;
+  text-decoration: none;
+  justify-content: flex-end;
+}
+
+.home-nav-link {
+  list-style: none;
+  text-decoration-color: #000000;
+}
+
+.home-nav-link li {
+  display: inline;
+  padding: 0px 30px;
+}
+
+
+
+.home-nav-link li a {
+  transition: all 0.3s ease 0s;
+}
+
+.home-nav-link li a:hover {
+  color: #ffffff;
+}
+
+.homeLogOut  {
+  background-color: #a9a9a9;
+  border: 3px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 22px;
+  color: #ffffff;
+  position: absolute;
+  right:300px;
+
+}
+
+button:hover {
+  background-color: #8da562;
+}

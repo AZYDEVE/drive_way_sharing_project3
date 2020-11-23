@@ -5,8 +5,10 @@ import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import swal from "sweetalert";
 import Calendar from "../components/Calendar";
-import {useHistory} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
+import Navbar from "../components/Navbar/Navbar";
+import "./makeAppointment.css"
 
 function MakeAppointmentTesting() {
   const history = useHistory();
@@ -16,11 +18,8 @@ function MakeAppointmentTesting() {
   const [endTime, setEndTime] = useState("");
   const [datePicked, setDatePicked] = useState("");
   const [existingAppointment, setExistingAppointment] = useState([]);
- 
 
   const [userInfo, setUserInfo] = useState();
-  
-
 
   const getAppointment = async (query, path) => {
     const res = await fetch(path, {
@@ -56,19 +55,14 @@ function MakeAppointmentTesting() {
         0
       ),
     };
-    
 
-    setExistingAppointment(oldArray => [...oldArray, schedule])
-
-
+    setExistingAppointment((oldArray) => [...oldArray, schedule]);
   };
 
-
-  const confirmSchedule= async ()=>{
-
-  const lastItem = existingAppointment[existingAppointment.length - 1]
-   swal("Your appointment is scheduled", { button: false });
-  const res = await fetch("/insert_appointment", {
+  const confirmSchedule = async () => {
+    const lastItem = existingAppointment[existingAppointment.length - 1];
+    swal("Your appointment is scheduled", { button: false });
+    const res = await fetch("/insert_appointment", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -76,33 +70,27 @@ function MakeAppointmentTesting() {
       body: JSON.stringify(lastItem),
     });
 
-  history.push("/home" )
-   
+    history.push("/home");
   };
 
+  //check database if the user is in the currently login collection
+  useEffect(() => {
+    check();
+  }, []);
 
-   //check database if the user is in the currently login collection
-  useEffect(()=>{
-    check()
-
-  },[])
-
-    const check =async ()=>{
-
+  const check = async () => {
     const data = localStorage.getItem("current-user");
 
-    if (data) { 
-      const result = await loginToken.checkCurrentLogin({email:data})
-      console.log(result)
-      if (result.result === false){
-        
-           history.push("/v_signin" )
+    if (data) {
+      const result = await loginToken.checkCurrentLogin({ email: data });
+      
+      if (result.result === false) {
+        history.push("/v_signin");
       }
-
-    }else{
-      history.push("/login")}
-}
-
+    } else {
+      history.push("/login");
+    }
+  };
 
   useEffect(() => {
     initialSetup();
@@ -110,16 +98,14 @@ function MakeAppointmentTesting() {
 
   const initialSetup = async () => {
     const data = localStorage.getItem("current-user");
-    console.log(data)
+   
     if (data) {
-    
-     setUserInfo(data);
-
+      setUserInfo(data);
     }
 
     const postRent = await localStorage.getItem("post-picked");
 
-    console.log(postRent);
+    
 
     if (postRent) {
       const currentPost = await JSON.parse(postRent);
@@ -131,75 +117,75 @@ function MakeAppointmentTesting() {
         "/get_appointment_query"
       );
 
-      console.log(data);
-      console.log(driveWayPost._id);
+ 
       await setExistingAppointment(data);
     }
   };
 
-
-
-
-
-
+  const handleLogOut = async () => {
+   
+    loginToken.deleteLoginToken({ email: userInfo });
+    localStorage.removeItem("current-user");
+  };
 
   return (
-    <div>
-      <br />
-      <br />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-3 offset-2 justify-content-end ">
-            <DayPicker
-              selectedDays={datePicked}
-              onDayClick={(e) => {
-                setDatePicked(e);
-              }}/>
+    <>
+      <Navbar role = "navigation" logoutFunction={handleLogOut} />
 
-            <h5>Start Time </h5>
-            <TimePicker
-              className="col col-lg-6"
-              start="0"
-              end="24"
-              name="StartTime"
-              step={30}
-              value={startTime}
-              onChange={(e) => {
-                setStartTime(e);
-              }}
-            />
-            <h5 className="mt-3">End Time </h5>
-            <TimePicker
-              className="col col-lg-6"
-              start="0"
-              end="24"
-              name="StartTime"
-              step={30}
-              value={endTime}
-              onChange={(e) => {
-                setEndTime(e);
-              }}
-            />
-            <div className="row">
-              <div className="col justify-content-center">
-                <button className="btn-primary m-3" onClick={handleSchduleBtn}>
-                  Schedule
-                </button>
-                <button className="btn-primary m-3" onClick={confirmSchedule}>Confirm</button>
-              </div>
-            </div>
-          </div>
+      <div className="make-appointment-body" >
+      <div className = "make-appointment-date-picker">
+        <DayPicker
+          role="date picker"
+          selectedDays={datePicked}
+          onDayClick={(e) => {
+            setDatePicked(e);
+          }}
+        />
 
-          <div className="col-6 ">
-            <Calendar
-              selectedPost={driveWayPost}
-              appointment={existingAppointment}
-              selectedDate={datePicked}
-            />
-          </div>
+      </div>
+
+        <h5 className = "time-picker-title-start">Start Time </h5>
+        <TimePicker
+        role = "timepicker"
+          className="make-appointment-time-picker-start"
+          start="0"
+          end="24"
+          name="StartTime"
+          step={30}
+          value={startTime}
+          onChange={(e) => {
+            setStartTime(e);
+          }}
+        />
+        <h5 className="time-picker-title-end">End Time </h5>
+        <TimePicker
+          className="make-appointment-time-picker-end"
+          start="0"
+          end="24"
+          name="StartTime"
+          step={30}
+          value={endTime}
+          onChange={(e) => {
+            setEndTime(e);
+          }}
+        />
+
+        <button className="btn-appointment-schedule" onClick={handleSchduleBtn}>
+          Schedule
+        </button>
+        <button className="btn-appointment-confirm" onClick={confirmSchedule}>
+          Confirm
+        </button>
+        <div className="make-appointment-calendar">
+        <Calendar
+          
+          selectedPost={driveWayPost}
+          appointment={existingAppointment}
+          selectedDate={datePicked}
+        />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

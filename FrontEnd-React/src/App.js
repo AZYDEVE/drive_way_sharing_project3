@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import CreatePost from "./createPost/CreatePost.js";
+import CreatePost from "./createPostPage/CreatePost.js";
 import SearchPage from "./searchPage/SearchPage.js";
-import Home from "./home/Home.js";
-import MakeAppointment from "./makeAppointment/MakeAppointment.js";
+import Home from "./homePage/Home.js";
+import MakeAppointment from "./makeAppointmentPage/MakeAppointment.js";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import {
   BrowserRouter as Router,

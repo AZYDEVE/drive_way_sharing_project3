@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
 import * as loginToken from "../components/loginTokenAndSignOff";
+import logo from "../components/Navbar/image/logo.png";
 
 function SignIn() {
- 
-
   const history = useHistory();
   const [signInInfo, setSignInInfo] = useState({
     email: "",
@@ -16,16 +15,20 @@ function SignIn() {
   });
 
   const handleSignIn = async () => {
-    console.log(signInInfo)
-    const isauthenticated = await loginToken.checkIfUserPasswordMatches(signInInfo);
-    console.log(isauthenticated)
-    
+   
+
+    const isauthenticated = await loginToken.checkIfUserPasswordMatches(
+      signInInfo
+    );
+  
+
+
     if (isauthenticated.result === true) {
-      localStorage.setItem('current-user', signInInfo.email)
-      history.push("/home" )
-    }else{
-       swal("You login doesn't work, please try again", { button: false });
-      }
+      localStorage.setItem("current-user", signInInfo.email);
+      history.push("/home");
+    } else {
+      swal("You login doesn't work, please try again", { button: false });
+    }
   };
 
   const handleSignInInput = (event) => {
@@ -37,11 +40,15 @@ function SignIn() {
     });
   };
 
- console.log(signInInfo)
- 
+
+
   return (
     <div>
       <div className="SignIn">
+        <div className="signin-logo-name">
+          <img src={logo} alt="logo" className="logo-img" />
+        </div>
+        
         <div className="container-fluid d-flex justify-content-center">
           <div className="signcard">
             <div className="card-header">
@@ -72,7 +79,6 @@ function SignIn() {
                   />
                 </div>
                 <br />
-               
 
                 <div className="form-group">
                   <input
@@ -93,9 +99,6 @@ function SignIn() {
                 <Link className="card-footerText" to="/signUp">
                   Sign up here
                 </Link>
-              </div>
-              <div>
-               
               </div>
             </div>
           </div>

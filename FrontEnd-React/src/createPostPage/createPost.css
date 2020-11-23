@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(../utility/font/Futura Bold font.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-light";
+  src: local("Futura-light"),
+    url(../utility/font/futura light bt.ttf) format("truetype");
+}
+
+.createpost-body {
+  background-color: #a9a9a9;
+  font-family: Futura-light, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  height:1000px;
+}
+
+.picture-upload {
+  background: #ffffff;
+}
+
+.date-time-picture-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  grid-gap: 15px;
+  display: grid;
+  grid-template:
+    "dtTit dtTit dtTit dtTit dtTit dtTit dtTit dtTit" 1%
+    ".     .     stTit edTit  .     .     .     .   " 1%
+    "monCk monlb monSt monEd  imgps imgps imgps   imgps "    10%
+    "tueCk tuelb tueSt tueEd  imge  imge  imge  imge" 10%
+    "wedCk wedlb wedSt wedEd  imge  imge  imge  imge" 10%
+    "thrCk thrlb thrSt thrEd  imge  imge  imge  imge" 10%
+    "friCk frilb friSt friEd  imge  imge  imge  imge" 10%
+    "satCk satlb satSt satEd  imge  imge  imge  imge" 10%
+    "sunCk sunlb sunSt sunEd  imge  imge  imge  imge" 10%
+    "btnSb btnSb btnSb btnSb btnSb btnSb btnSb btnSb" 5%
+    / 1% 6% 9% 9% 6% 6% 6% 6%;
+}
+
+
+.date-time-title {
+  grid-area: dtTit;
+}
+
+.start-title {
+  margin-top: 20px;
+  grid-area: stTit;
+  justify-self: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.end-title {
+  margin-top: 20px; 
+  grid-area: edTit;
+  justify-self: center;
+  font-size: 20px;
+   font-weight: 800;
+}
+
+.mon-check {
+  grid-area: monCk;
+}
+
+.mon-lable {
+  grid-area: monlb;
+}
+
+.mon-start {
+  grid-area: monSt;
+}
+
+.mon-end {
+  grid-area: monEd;
+}
+
+.tue-checkbox {
+  grid-area: tueCk;
+}
+
+.tue-label {
+  grid-area: tuelb;
+}
+
+.tue-start {
+  grid-area: tueSt;
+}
+
+.tue-end {
+  grid-area: tueEd;
+}
+
+.wed-checkbox {
+  grid-area: wedCk;
+}
+
+.wed-label {
+  grid-area: wedlb;
+}
+
+.wed-start {
+  grid-area: wedSt;
+}
+
+.wed-end {
+  grid-area: wedEd;
+}
+
+.thur-checkbox {
+  grid-area: thrCk;
+}
+
+.thur-label {
+  grid-area: thrlb;
+}
+
+.thur-start {
+  grid-area: thrSt;
+}
+
+.thur-end {
+  grid-area: thrEd;
+}
+
+.fri-checkbox {
+  grid-area: friCk;
+}
+
+.fri-label {
+  grid-area: frilb;
+}
+
+.fri-start {
+  grid-area: friSt;
+}
+
+.fri-end {
+  grid-area: friEd;
+}
+
+.sat-checkbox {
+  grid-area: satCk;
+}
+
+.sat-label {
+  grid-area: satlb;
+}
+
+.sat-start {
+  grid-area: satSt;
+}
+
+.sat-end {
+  grid-area: satEd;
+}
+
+.sun-checkbox {
+  grid-area: sunCk;
+}
+
+.sun-label {
+  grid-area: sunlb;
+}
+
+.sun-start {
+  grid-area: sunSt;
+}
+
+.sun-end {
+  grid-area: sunEd;
+}
+
+
+.img-picker { 
+  grid-area: imgPk;
+  justify-self: center;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  
+  
+}
+
+.img-picker-show{
+  grid-area: imgps;
+  padding: 5px 8px 5px 8px;
+  border:1px soild#000;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-self:center;
+  background-color: #8DA562;
+  font-weight: 700;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.img-picker-show : hover{
+  background-color: #8DA562;
+}
+
+.img-custom-text {
+  grid-area: imgTx;
+  overflow: scroll;
+
+
+}
+
+.picture-upload {
+  grid-area: imge;
+  justify-self: center;
+  align-self: center;
+  overflow: scroll;
+  height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+.submit-btn{
+ grid-area: btnSb;
+ background-color: #292b2c;
+ color: #ffffff;
+ border: 2px;
+ border-radius: 6px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ font-weight: 600;
+ opacity: 0.9;
+
+}
+
+
+.submit-btn : hover{
+ background-color: #8DA562;
+
+}
+
