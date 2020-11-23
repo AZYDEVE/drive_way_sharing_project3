@@ -3,6 +3,7 @@
 ### Auther: Alex Yang and Vicky Zhuang
 
 ### Class Link: https://johnguerra.co/classes/webDevelopment_fall_2020/
+### Website: https://drive-way-sharing-project3.herokuapp.com/
 
 ## Objective:
 ### This website allows users to create posts for renting out their driveways and sechedule appointment
