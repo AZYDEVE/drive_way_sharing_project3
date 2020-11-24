@@ -7,6 +7,10 @@ import * as loginToken from "../components/loginTokenAndSignOff";
 import { useHistory } from "react-router-dom";
 import logo from "../components/Navbar/image/logo.png";
 
+/**
+ * In addition to a sign up and sign in page, having an account page where you can modify
+ * or delete your account will allow for better accessibility!
+ */
 function SignUp() {
   const history = useHistory();
   const [signUpInfo, setSignUpInfo] = useState({
