@@ -63,7 +63,7 @@ function SignUp() {
 
     /**
      * Missing one main landmark and a level-one heading. It is good to follow HTML and Aria landmark rules to
-     * to ensure that screen reader users can easily navigate your page. 
+     * to ensure that screen reader users can easily navigate your page.
      */
   return (
     <div>
