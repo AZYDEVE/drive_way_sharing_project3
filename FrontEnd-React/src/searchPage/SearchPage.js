@@ -123,8 +123,9 @@ function SearchPage(props) {
                 style={cardViewStyle}
                 picture={t.picture}
                 post={t}
-                parkingFee={t.parkingFee}
-                street={t.street}
+                parkingFee={t.parkingFee} {/* Might look more professional to put something like "Hourly Fee: $5.00" or "Rental Fee: $5.00/hr" */}
+
+                street={t.street} {/* Might be nice to have the city and zip code as well, also to have consistent capitalization across all. */}
                 name={t._id}
                 function={goToPost}
                 buttonName="Make Appointment"
