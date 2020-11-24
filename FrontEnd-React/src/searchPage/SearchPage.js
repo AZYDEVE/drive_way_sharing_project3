@@ -7,6 +7,11 @@ import { useHistory } from "react-router-dom";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import Navbar from "../components/Navbar/Navbar";
 
+/**
+ * The search post page looks very clean and easy to navigate. However it is missing one main landmark and
+ * a level-one heading!
+ *
+ */
 function SearchPage(props) {
   const history = useHistory();
 
