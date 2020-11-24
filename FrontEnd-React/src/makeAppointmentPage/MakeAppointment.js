@@ -172,7 +172,8 @@ function MakeAppointmentTesting() {
           }}
         />
 
-        <button className="btn-appointment-schedule" onClick={handleSchduleBtn}>
+        <button className="btn-appointment-schedule" onClick={handleSchduleBtn}> {/* This button is kind of confusing as a user - what does it do? */}
+
           Schedule
         </button>
         <button className="btn-appointment-confirm" onClick={confirmSchedule}>
