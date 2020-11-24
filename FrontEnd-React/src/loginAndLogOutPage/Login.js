@@ -97,7 +97,7 @@ function SignIn() {
             <div className="card-footer">
               <div>
                 <Link className="card-footerText" to="/signUp">
-                  Sign up here
+                  Sign up here  {/* Signing up worked for me but for some reason sign in isn't working for me after signing out. */}
                 </Link>
               </div>
             </div>
