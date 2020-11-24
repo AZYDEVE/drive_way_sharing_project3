@@ -6,6 +6,10 @@ import * as loginToken from "../components/loginTokenAndSignOff";
 import "./home.css";
 import Navbar from "../components/Navbar/Navbar";
 
+/**
+ * In the home page the Appointment part of "View Appointment'
+ * has a grey line through it which makes it hard to see!
+ */
 function Home(props) {
   const history = useHistory();
 
