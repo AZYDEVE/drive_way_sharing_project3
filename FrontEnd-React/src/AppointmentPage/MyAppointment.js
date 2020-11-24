@@ -103,7 +103,9 @@ function MyAppointment() {
     <div>
       <Navbar role="navigation" logoutFunction={handleLogOut} MyAppointment={{ borderBottom: "4px solid black" }} />
       <main role="main">
-      <h4  className="appointment-title">You Active Appointment</h4></main>
+      <h4  className="appointment-title">Your Active Appointments </h4></main> {/* More readable, maybe try adding to the CSS here because 
+      it looks kind of plain and just sitting in the middle of the page right now. */}
+
       <div role="contentinfo" className ="container my-appointment-body">
      
       {myAppointment.map((data) => {
