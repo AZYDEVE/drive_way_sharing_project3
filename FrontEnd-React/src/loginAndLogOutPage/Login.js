@@ -7,6 +7,11 @@ import swal from "sweetalert";
 import * as loginToken from "../components/loginTokenAndSignOff";
 import logo from "../components/Navbar/image/logo.png";
 
+/*
+* Ran axe on your homepage with the Sign In card and there are contrast issues
+* It is probably better to make sure the background of the sign in card's opacity
+* is higher to provide better sight accessibility.
+* */
 function SignIn() {
   const history = useHistory();
   const [signInInfo, setSignInInfo] = useState({
