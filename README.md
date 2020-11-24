@@ -6,8 +6,7 @@
 ### Website: https://drive-way-sharing-project3.herokuapp.com/
 
 ## Objective:
-### This website allows users to create posts for renting out their driveways and sechedule appointment
-### when they need to use others'. 
+### This website allows users to create posts for renting out their driveways and sechedule appointment when they need to use others'. 
 
 ### screenshoot:
 ![alt text](https://github.com/AZYDEVE/drive_way_sharing_project3/blob/main/Image/login%20page.png)
