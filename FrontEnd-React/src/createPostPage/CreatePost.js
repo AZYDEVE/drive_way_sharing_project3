@@ -421,7 +421,7 @@ function CreatePost() {
 
       <div className=" date-time-picture-container">
         <h5 className="date-time-title">
-          Set Time For Renting Out Your Drive Way
+          Set Time For Renting Out Your Drive Way  {/* The font color is a little dark and the font is small/thin so it's a little hard to read.  */}
         </h5>
 
         <input
@@ -688,7 +688,7 @@ function CreatePost() {
         aria-label="image-picker"
           className = "img-picker-show"
           onClick={fileUploadTrigerInput}
-        >Upload Iamge</button>
+        >Upload Image</button>  {/* Try not to have any typos! */}
         
 
         <img
