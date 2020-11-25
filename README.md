@@ -1,6 +1,6 @@
 # Driveway Sharing 
 
-### Author: Alex Yang
+### Author: Alex Yang , Vicky Zhuang
 
 ### Class Link: https://johnguerra.co/classes/webDevelopment_fall_2020/
 ### Website: https://drive-way-sharing-project3.herokuapp.com/
