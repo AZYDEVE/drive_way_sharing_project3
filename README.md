@@ -17,12 +17,17 @@
 ![alt text](https://github.com/AZYDEVE/drive_way_sharing_project3/blob/main/Image/search%20page.png)
 
 ### Instructions to build:  
-- clone the files to you computer 
-- outside of the Frontend Folder type npm install to install all the dependencies in the package.json file
-- npm install in the front-react folder
-- ourside of the Front-end Folder , type "run npm dev" to turn on the backend server
-- type "yarn start" in the frontend folder to run the front end
-- go to localhoust://3000 to see the web application. 
+- Sign up as a user in the sign up page
+- The web app uses passport-local strategy for authentications. This allows users remain login in multiple sessions until logout.  
+- The database stores only the hashed passwords
+- In the Search page, the selector form allows sorting and filtering the posts 
+- The pagination at the bottom of search page, Users can type in page numbers to the input box for navigating to different pages 
+- Users can like and unlike a post. The liked posts are kept in the Favorite page. Users can unlike the page to remove from the Favorite page
+- Users clicking the posts will bring them to the post detail page. The page not only shows apartment details, but also recommanding similar posts with $500 difference in price.
+
+
+
+
 
 
 
